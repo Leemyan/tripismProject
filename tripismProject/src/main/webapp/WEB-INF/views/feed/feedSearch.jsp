@@ -266,7 +266,7 @@
 
                                 <div style="margin-top: 30px;">
                                     <span onclick="copyTheURL(this)">
-                                        <input type="text" value="여기에 피드주소 넣으려함" style="text-align: center; width: 280px;" readonly>
+                                        <input type="text" value="http://localhost:8007/tripism/index.pg" style="text-align: center; width: 280px;" readonly>
                                     </span> &nbsp; &lt;&lt; &nbsp; 클릭 시 복사
                                 </div>
                             </div>

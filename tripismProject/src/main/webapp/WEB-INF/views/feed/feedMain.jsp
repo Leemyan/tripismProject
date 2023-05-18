@@ -300,7 +300,7 @@
                     	
                     <b style="margin-left: 13px;" >${ f.memNickname }</b>
                     
-                    <input type="text" style="width: 150px; text-align: center; border: none;" placeholder="${ f.feedDate }" disabled>
+                    <input type="text" style="width: 100px; text-align: center; border: none;" placeholder="${f.feedDate}" disabled>
 
 					<div style="float: right; margin-top: 5px;">
 						 <c:if test="${ not empty loginUser.memId and loginUser.memNo eq f.memNo }">
@@ -579,6 +579,25 @@
 			<!-- 무한스크롤 끝낼 자리 -->
 			
 			<script>
+			
+				function changeTime(${f.feedDate}) {
+					const milliSeconds = new Date() - ${f.feedDate}
+					  const seconds = milliSeconds / 1000
+					  if (seconds < 60) return `방금 전`
+					  const minutes = seconds / 60
+					  if (minutes < 60) return `${Math.floor(minutes)}분 전`
+					  const hours = minutes / 60
+					  if (hours < 24) return `${Math.floor(hours)}시간 전`
+					  const days = hours / 24
+					  if (days < 7) return `${Math.floor(days)}일 전`
+					  const weeks = days / 7
+					  if (weeks < 5) return `${Math.floor(weeks)}주 전`
+					  const months = days / 30
+					  if (months < 12) return `${Math.floor(months)}개월 전`
+					  const years = days / 365
+					  return `${Math.floor(years)}년 전`
+					
+				}
 			
 				$(function(){
 					selectReplyList();
